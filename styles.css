@@ -963,7 +963,7 @@ nav {
         align-items: center;
         width: 100%;
         height: auto;
-        padding: 2rem 4rem;
+        padding: 2rem;
     }
 
     .insurance h3 {
@@ -971,11 +971,10 @@ nav {
         text-align: center;
         width: 100%;
         height: auto;
-        padding: 2rem 2rem 0 2rem;
+        padding: 1rem;
         margin: 0;
         font-family: "Cookie", cursive;
-        font-size: calc(var(--scale) * 3.5);
-        text-decoration: underline;
+        font-size: calc(var(--scale) * 2.5);
         color:hsl(0, 0%, 20%, 100%);
     }
 
@@ -986,22 +985,23 @@ nav {
         align-items: center;
         width: 100%;
         height: auto;
-        padding: 1rem;
     }
 
     .insurance-photo {
         width: 50%;
         max-width: 20rem;
         height: auto;
-        padding: 1.5rem 2rem;
+        padding: calc(var(--scale) * 1.75);
     }
 
     @media only screen and (min-width: 1024px) {
+        .insurance h3 {
+            padding: 3rem 3rem 2rem 3rem;
+            font-size: calc(var(--scale) * 3.5);
+        }
+
         .insurance-photo {
             width: 25%;
-            max-width: 20rem;
-            height: auto;
-            padding: 3rem 2rem;
         }
     }
 
