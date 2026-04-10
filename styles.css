@@ -910,6 +910,7 @@ nav {
     .endorsement h2 {
         position: sticky;
         top: 0;
+        z-index: 1;
         padding: calc(var(--scale) * 2);
         margin: 0;
         font-size: calc(var(--scale) * 4);
@@ -922,6 +923,7 @@ nav {
         align-items: center;
         position: sticky;
         top: calc(var(--scale) * 8.5);
+        z-index: 2;
         width: 100%;
         height: auto;
         padding: 0 2rem 2rem 2rem;
