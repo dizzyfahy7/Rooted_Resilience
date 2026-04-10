@@ -165,15 +165,19 @@ a {
     box-sizing: border-box;
 }
 
+:root {
+    --scale: clamp(0.9rem, 1.2vw + 0.5rem, 1.2rem);
+}
+
 html {
-    font-size: clamp(14px, 1vw, 18px);
+    font-size: 16px;
 }
 
 body {
     width: 100%;
     padding: 0;
     margin: 0;
-    background-color: hsla(100, 15%, 30%, 100%);
+    background-color: hsla(100, 15%, 35%, 100%);
 }
 
 /*--HEADER--*/
@@ -193,6 +197,7 @@ header {
 
 nav {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: auto;
@@ -202,15 +207,22 @@ nav {
 .nav-links {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     padding: 1rem;
     margin: 0;
     list-style-type: none;
 }
 
+.nav-links li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
 .nav-links a {
-    padding: 0.5rem;
+    padding: clamp(0.5rem, 2vw, 2rem);
     text-decoration: none;
     font-family: "Poiret One", sans-serif;
     font-size: clamp(0.75rem, 3vw, 3rem);
@@ -290,15 +302,18 @@ nav {
         height: 75vh;
     }
 
-    .nav-links {
+    nav {
         grid-row: 1 / 2;
         grid-column: 2 / 3;
         justify-content: flex-end;
-        padding: 0 clamp(1rem, 2vw, 1.5rem);
+        padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
     }
 
-    .nav-links li {
-        margin: 0 0.5rem;
+    .nav-links {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        padding: 0;
     }
 
     .nav-links a {
@@ -378,13 +393,13 @@ nav {
         top: 0;
         width: 100%;
         height: auto;
-        padding: 2rem;
+        padding: calc(var(--scale) * 2);
     }
 
     .meet-courtney h1 {
         padding: 0;
         margin: 0;
-        font-size: 4rem;
+        font-size: calc(var(--scale) * 4);
         color:hsl(0, 0%, 20%, 100%)
     }
     
@@ -393,7 +408,7 @@ nav {
         justify-content: center;
         align-items: center;
         position: sticky;
-        top: 118px;
+        top: calc(var(--scale) * 8.5);
         width: 100%;
         height: auto;
         padding: 0 2rem 2rem 2rem;
@@ -432,7 +447,7 @@ nav {
     .intro-text p {
         padding: 1rem 0;
         margin: 0;
-        font-size: 1.5rem;
+        font-size: calc(var(--scale) * 1.25);
     }
 
     @media only screen and (min-width: 1024px) {
@@ -441,7 +456,6 @@ nav {
             grid-template-rows: auto auto;
             grid-template-columns: auto auto;
             justify-content: center;
-            align-items: space-between;
             width: 100%;
             height: auto;
             padding-top: 3rem;
@@ -467,20 +481,20 @@ nav {
             grid-row: 2 / 3;
             grid-column: 1 / 2;
             width: 100%;
-            min-width: 29rem;
-            height: auto;
+            min-width: 27rem;
+            height: 100%;
             padding: 2rem;
         }
 
         .intro-photo {
             width: 100%;
-            min-width: 29rem;
-            height: auto;
+            min-width: 27rem;
+            height: 100%;
             margin: 0;
         }
 
         .intro-photo img {
-            min-width: 29rem;
+            min-width: 27rem;
         }
 
         #intro-container-text {
@@ -491,7 +505,7 @@ nav {
             grid-row: 1 / 3;
             grid-column: 2 / 3;
             width: 100%;
-            min-width: 32rem;
+            min-width: 27rem;
             height: auto;
             padding: 2rem;
         }
@@ -501,10 +515,14 @@ nav {
             flex-flow: column nowrap;
             justify-content: center;
             width: 100%;
-            min-width: 32rem;
+            min-width: 27rem;
             height: 42rem;
             padding: 1rem 2rem;
             margin: 0;
+        }
+
+        .intro-text p {
+            font-size: calc(var(--scale) * 1);
         }
     }
 
@@ -517,15 +535,6 @@ nav {
         margin: 0;
     }
 
-    .offered-services {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: auto;
-    }
-
     .specialties {
         display: flex;
         flex-flow: column nowrap;
@@ -535,18 +544,20 @@ nav {
         width: 100%;
         padding: 0;
         margin: 0;
-        background-color: hsla(100, 15%, 30%, 100%);
+        background-color: hsla(100, 15%, 35%, 100%);
     }
 
     .specialties h2 {
         text-align: center;
         padding: 2rem 2rem 0 2rem;
         margin: 0;
-        font-size: 3rem;
+        font-size: calc(var(--scale) * 3.5);
         color: hsl(0, 0%, 15%, 100%);
     }
 
     .specialties-list {
+        display: flex;
+        justify-content: center;
         width: 100%;
         height: auto;
     }
@@ -555,7 +566,9 @@ nav {
         display: grid;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-        padding: 0 2rem;
+        gap: 1rem;
+        max-width: 31rem;
+        padding: 1rem 2rem;
         margin: 0;
         list-style-type: none;
     }
@@ -566,12 +579,11 @@ nav {
         align-items: center;
         text-align: center;
         min-height: 6rem;
-        padding: 0.5rem;
-        margin: 1rem;
+        padding: 0.75rem;
         border-radius: 1rem;
         background-color: hsla(100, 15%, 15%, 100%);
         font-family: "Montserrat Alternates", sans-serif;
-        font-size: 1rem;
+        font-size: calc(var(--scale) * 1);
         font-weight: 300;
         font-style: normal;
         color: hsl(0, 0%, 45%, 100%);
@@ -586,18 +598,20 @@ nav {
         width: 100%;
         padding: 0;
         margin: 0;
-        background-color: hsla(100, 15%, 30%, 100%);
+        background-color: hsla(100, 15%, 35%, 100%);
     }
 
     .modalities h2 {
         text-align: center;
         padding: 2rem 2rem 0 2rem;
         margin: 0;
-        font-size: 3rem;
+        font-size: calc(var(--scale) * 3.5);
         color: hsl(0, 0%, 15%, 100%);
     }
 
     .modalities-list {
+        display: flex;
+        justify-content: center;
         width: 100%;
         height: auto;
     }
@@ -606,7 +620,10 @@ nav {
         display: grid;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-        padding: 0 2rem;
+        gap: 1rem;
+        width: 100%;
+        max-width: 31rem;
+        padding: 1rem 2rem;
         margin: 0;
         list-style-type: none;
     }
@@ -617,12 +634,11 @@ nav {
         align-items: center;
         text-align: center;
         min-height: 6rem;
-        padding: 0.5rem;
-        margin: 1rem;
+        padding: calc(var(--scale) * 0.75);
         border-radius: 1rem;
         background-color: hsla(100, 15%, 15%, 100%);
         font-family: "Montserrat Alternates", sans-serif;
-        font-size: 1.5rem;
+        font-size: calc(var(--scale) * 1.5);
         font-weight: 300;
         font-style: normal;
         color: hsl(0, 0%, 45%, 100%);
@@ -643,7 +659,7 @@ nav {
         font-weight: 300;
         font-style: normal;
         color: hsl(0, 0%, 15%, 100%);
-        background-color: hsla(100, 15%, 30%, 100%);
+        background-color: hsla(100, 15%, 35%, 100%);
     }
 
     .services-individual-container {
@@ -734,7 +750,7 @@ nav {
         display: none;
     }
 
-    @media only screen and (min-width: 660px) {
+    @media only screen and (min-width: 720px) {
         .services-desktop-tablet {
             display: flex;
             flex-flow: column nowrap;
@@ -760,7 +776,7 @@ nav {
             grid-template-columns: 1fr 1fr;
             justify-content: center;
             align-self: center;
-            max-width: 65rem;
+            max-width: 58rem;
             padding: 1rem 1rem 2rem 1rem;
             border: 1rem solid hsla(100, 15%, 15%, 100%);
             border-radius: 3rem;
@@ -783,15 +799,15 @@ nav {
             grid-template-columns: auto auto;
             justify-content: center;
             gap: clamp(0.5rem, 1.75vw, 1rem);
-            padding: 0 1.5rem;
+            padding: 0 calc(var(--scale) * 2);
         }
 
         .specialties-list li {
-            min-width: 7rem;
-            max-width: 8rem;
-            min-height: 7rem;
+            min-width: 7.5rem;
+            min-height: 7.5rem;
+            padding: calc(var(--scale) * 0.75);
             margin: 0;
-            font-size: clamp(0.75rem, 1.75vw, 1rem);
+            font-size: calc(var(--scale) * 1);
         }
 
         .modalities {
@@ -812,15 +828,15 @@ nav {
             justify-content: center;
             justify-self: center;
             gap: clamp(0.5rem, 1.75vw, 1rem);
-            padding: 0 1.5rem;
+            padding: 0 calc(var(--scale) * 2);
         }
 
         .modalities-list li {
-            min-width: 7rem;
-            max-width: 8rem;
-            min-height: 7rem;
+            min-width: 7.5rem;
+            min-height: 7.5rem;
+            padding: calc(var(--scale) * 0.75);
             margin: 0;
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            font-size: calc(var(--scale) * 1.25);
         }
 
         .services-desktop-tablet h3 {
@@ -839,7 +855,7 @@ nav {
             font-weight: 300;
             font-style: normal;
             color: hsl(0, 0%, 15%, 100%);
-            background-color: hsla(100, 15%, 30%, 100%);;
+            background-color: hsla(100, 15%, 35%, 100%);;
         }
 
         .services-individual-container {
@@ -894,22 +910,31 @@ nav {
     .endorsement h2 {
         position: sticky;
         top: 0;
-        padding: 2rem;
+        padding: calc(var(--scale) * 2);
         margin: 0;
-        font-size: 4.5rem;
+        font-size: calc(var(--scale) * 4);
         color: hsl(0, 0%, 20%, 100%)
     }
 
-    .endorsement-text {
+    .endorsement-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: sticky;
-        top: clamp(125.5px, 9vw, 162px);
-        min-width: 20rem;
-        max-width: 60rem;
-        min-height: 233px;
+        top: calc(var(--scale) * 8.5);
+        width: 100%;
+        height: auto;
+        padding: 0 2rem 2rem 2rem;
+    }
+
+    .endorsement-text {
+        min-width: 16rem;
+        max-width: 50rem;
+        max-height: 25rem;
         padding: 1rem 2rem;
+        margin: 0;
         border: none;
         border-radius: 2rem;
-        margin: 0 2rem 2rem 2rem;
         background-color: hsla(100, 15%, 15%, 100%);
     }
 
@@ -917,13 +942,14 @@ nav {
         padding: 1rem 0;
         margin: 0;
         color:hsl(0, 0%, 45%, 100%);
-        font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+        font-size: calc(var(--scale) * 1.25);
     }
 
     .endorsement-text p {
         padding: 1rem 0;
         margin: 0;
-        font-size: clamp(0.75rem, 2.5vw, 1.5rem);
+        line-height: 1.5rem;
+        font-size: calc(var(--scale) * 0.75);
         color:hsl(0, 0%, 45%, 100%)
     }
 
@@ -935,7 +961,7 @@ nav {
         align-items: center;
         width: 100%;
         height: auto;
-        background-color: hsla(100, 15%, 30%, 100%);
+        padding: 2rem 4rem;
     }
 
     .insurance h3 {
@@ -943,10 +969,11 @@ nav {
         text-align: center;
         width: 100%;
         height: auto;
-        padding: 1rem 2rem;
-        margin: 2rem 0 0 0;
-        font-size: clamp(1rem, 4vw, 3rem);
-        background-color: hsla(100, 15%, 30%, 100%);
+        padding: 2rem 2rem 0 2rem;
+        margin: 0;
+        font-family: "Cookie", cursive;
+        font-size: calc(var(--scale) * 3.5);
+        text-decoration: underline;
         color:hsl(0, 0%, 20%, 100%);
     }
 
@@ -957,21 +984,20 @@ nav {
         align-items: center;
         width: 100%;
         height: auto;
+        padding: 1rem;
     }
 
     .insurance-photo {
         width: 50%;
+        max-width: 20rem;
         height: auto;
-        padding: 1.5rem 3rem;
+        padding: 1.5rem 2rem;
     }
 
-    @media only screen and (min-width: 660px) {
-        .insurance h3 {
-            position: static;
-        }
-
+    @media only screen and (min-width: 1024px) {
         .insurance-photo {
             width: 25%;
+            max-width: 20rem;
             height: auto;
             padding: 3rem 2rem;
         }
@@ -1034,7 +1060,7 @@ nav {
         align-items: center;
         width: 100%;
         height: auto;
-        background-color:hsla(100, 15%, 30%, 100%);
+        background-color: hsla(100, 15%, 35%, 100%);
     }
 
     .consultation h4 {
@@ -1064,30 +1090,25 @@ nav {
         padding: 0;
     }
 
-    .consultation .book-now {
+    .consultation .book-now, .consultation .contact {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         width: 100%;
         height: auto;
-        padding: clamp(2rem, 4vw, 3.5rem);
+        padding: calc(var(--scale) * 1.5);
     }
 
     .consultation .contact {
-        display: flex;
         justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-        height: auto;
-        padding: clamp(2rem, 4vw, 3rem);
     }
 
     .consultation a {
-        padding: clamp(0.75rem, 1vw, 1.5rem) clamp(1rem, 2vw, 2rem);
+        padding: calc(var(--scale) * 0.75) clamp(var(--scale) * 1, 3vw, var(--scale) * 1.25);
         border: none;
         border-radius: 2rem;
         text-decoration: none;
-        font-size: clamp(0.75rem, 3vw, 2rem);
+        font-size: calc(var(--scale) * 1.25);
         background-color: hsla(100, 15%, 15%, 100%);
         color:hsl(0, 0%, 45%, 100%);
     }
@@ -1115,21 +1136,34 @@ nav {
 /*--FOOTER--*/
 footer {
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: auto;
-    padding: 0.5rem 2rem;
+    padding: 0;
     border-top: 2px solid hsla(100, 15%, 15%, 100%);
+    margin: 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 60rem;
+    height: auto;
+    padding: 0.5rem;
 }
 
 footer p {
     text-align: center;
-    padding: 0.25rem;
+    padding: 0.25rem 2rem;
     margin: 0;
-    font-size: clamp(0.75rem, 3vw, 1.25rem);
-    color:hsl(0, 0%, 20%, 100%);
+    font-size: calc(var(--scale) * 1);
+    color:hsl(0, 0%, 15%, 100%);
 }
 
-
+@media only screen and (min-width: 890px) {
+    
+}
