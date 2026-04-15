@@ -1,122 +1,122 @@
 /*--GENERAL FONT SPECIFICATIONS--*/
 .cookie-regular {
-  font-family: "Cookie", cursive;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Cookie", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .rubik-distressed-regular {
-  font-family: "Rubik Distressed", system-ui;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Rubik Distressed", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .montserrat-alternates-thin {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 100;
-  font-style: normal;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 100;
+    font-style: normal;
 }
 
 .montserrat-alternates-extralight {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 200;
-  font-style: normal;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 200;
+    font-style: normal;
 }
 
 .montserrat-alternates-light {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 300;
-  font-style: normal;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .montserrat-alternates-regular {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .montserrat-alternates-medium {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .montserrat-alternates-semibold {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 600;
-  font-style: normal;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .montserrat-alternates-bold {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .montserrat-alternates-extrabold {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 800;
-  font-style: normal;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 800;
+    font-style: normal;
 }
 
 .montserrat-alternates-black {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 900;
-  font-style: normal;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 900;
+    font-style: normal;
 }
 
 .montserrat-alternates-thin-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 100;
-  font-style: italic;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 100;
+    font-style: italic;
 }
 
 .montserrat-alternates-extralight-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 200;
-  font-style: italic;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 200;
+    font-style: italic;
 }
 
 .montserrat-alternates-light-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 300;
-  font-style: italic;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 300;
+    font-style: italic;
 }
 
 .montserrat-alternates-regular-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 400;
-  font-style: italic;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 400;
+    font-style: italic;
 }
 
 .montserrat-alternates-medium-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 500;
-  font-style: italic;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: italic;
 }
 
 .montserrat-alternates-semibold-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 600;
-  font-style: italic;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 600;
+    font-style: italic;
 }
 
 .montserrat-alternates-bold-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 700;
-  font-style: italic;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 700;
+    font-style: italic;
 }
 
 .montserrat-alternates-extrabold-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 800;
-  font-style: italic;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 800;
+    font-style: italic;
 }
 
 .montserrat-alternates-black-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 900;
-  font-style: italic;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 900;
+    font-style: italic;
 }
 
 h1 {
@@ -186,208 +186,297 @@ body {
 }
 
 /*--HEADER--*/
-header {
-    display: grid;
-    grid-template-rows: auto 1fr 1fr;
-    grid-template-columns: auto;
-    width: 100%;
-    height: 65%;
-    padding: 0;
-    margin: 0;
-    background-image: url(flagstaff.jpeg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    padding: 0;
-}
-
-.nav-links {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 25rem;
-    padding: 1rem;
-    margin: 0;
-    list-style-type: none;
-}
-
-.nav-links li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-}
-
-.nav-links a {
-    padding: clamp(0.5rem, 2vw, 2rem);
-    text-decoration: none;
-    font-family: "Montserrat Alternates", sans-serif;
-    font-size: clamp(0.625rem, 2vw, 1rem);
-}
-
-.nav-links a:link {
-    color: black;
-}
-
-.nav-links a:visited {
-    color: black;
-}
-
-.nav-links a:hover {
-    cursor: pointer;
-    border: none;
-    border-radius: 1.5rem;
-    background-color: hsla(100, 15%, 30%, 50%)
-}
-
-.nav-links a:active {
-    cursor: pointer;
-    border: none;
-    border-radius: 1.5rem;
-    background-color: hsla(100, 15%, 20%, 75%)
-}
-
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding-bottom: clamp(1.5rem, 10vw, 2rem);
-}
-
-.logo h1 {
-    padding: 0;
-    margin: 0;
-    font-family: "Cookie", cursive;
-    font-size: clamp(1.5rem, 8vw, 2rem);
-    color: hsl(0, 0%, 20%, 100%);
-}
-
-.logo a {
-    font-family: "Cookie", cursive;
-    text-decoration: none;
-}
-
-.logo a:link {
-    color: hsl(0, 0%, 20%, 100%)
-}
-
-.logo a:visited {
-    color: hsl(0, 0%, 20%, 100%)
-}
-
-.logo a:hover {
-    cursor: pointer;
-}
-
-.page-hero {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding: clamp(1rem, 2vw, 3rem) 0 clamp(4rem, 4vw, 5rem);
-}
-
-.page-hero h2 {
-    padding: 0;
-    margin: 0;
-    font-size: clamp(0.75rem, 4vw, 2rem);
-    color: hsl(0, 0%, 60%, 100%);
-}
-
-@media only screen and (min-width: 540px) {
-    header {
-        grid-template-rows: auto 1fr;
-        grid-template-columns: 2fr 3fr;
+    /*--GLOBAL HEADER STYLING--*/
+    .global-header {
+        position: sticky;
+        top: 0;
         width: 100%;
-        height: 75vh;
-        max-height: 786px;
+        height: auto;
+        padding: calc(var(--scale) * 1.5);
+        margin: 0;
     }
 
-    nav {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
-        justify-content: flex-end;
-        padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
-    }
-
-    .nav-links {
+    .navbar-content {
         display: flex;
         flex-flow: row nowrap;
-        justify-content: flex-end;
-        padding: 0;
-    }
-
-    .nav-links a {
-        padding: clamp(0.5rem, 0.5vw, 0.75rem) clamp(0.75rem, 1.5vw, 1.25rem);
-        font-size: clamp(0.75rem, 1.5vw, 1.25rem);
-    }
-
-    .nav-links .home {
-        display: none;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: calc(var(--scale) * 0.75) calc(var(--scale) * 1.5);
+        margin: 0;
+        border: none;
+        border-radius: calc(var(--scale) * 2);
+        background-color: hsla(100, 15%, 20%, 95%);
     }
 
     .logo {
-        grid-row: 1 / 2;
-        grid-column: 1 / 2;
-        justify-content: flex-start;
-        padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
     }
 
-    .logo a {
-        font-size: clamp(2rem, 5vw, 4.5rem);
-        color: hsla(100, 15%, 40%, 100%);
+    .logo a {        
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        font-family: "Cookie", cursive; 
+        font-size: calc(var(--scale) * 1.75);
+        font-weight: 400;
+        font-style: normal;
+        color: hsl(0, 0%, 55%, 100%);
     }
 
     .logo a:link {
-        color: hsla(100, 15%, 40%, 100%);
+        color: hsl(0, 0%, 55%, 100%);
     }
 
     .logo a:visited {
-        color: hsla(100, 15%, 40%, 100%);
+        color: hsl(0, 0%, 55%, 100%);
     }
 
     .logo a:hover {
+        color: hsl(0, 0%, 45%, 100%);
         cursor: pointer;
-        color: hsla(100, 15%, 30%, 100%);
     }
-    
+
     .logo a:active {
+        text-shadow: 1px 1px 0;
+        color: hsla(100, 15%, 35%, 100%);
         cursor: pointer;
-        color: hsla(100, 15%, 25%, 100%);
     }
 
-    .page-hero {
-        grid-row: 2 / 3;
-        grid-column: 1 / 3;
-        padding-bottom: clamp(8rem, 40vh, 27rem);
-        color: hsl(0, 0%, 20%, 100%);
+    nav {
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    details summary {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        height: auto;
+        padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
+        margin: 0;
+        text-align: center;
+        list-style-type: none;
+        font-family: "Montserrat Alternates", sans-serif;
+        font-size: calc(var(--scale) * 1);
+        font-weight: 300;
+        font-style: normal;
+        color: hsl(0, 0%, 55%, 100%);
+        cursor: pointer;
+    }
+
+    details summary:hover {
+        padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
+        border: none;
+        border-radius: calc(var(--scale) * 1);
+        color: hsl(0, 0%, 5%, 100%);
+        background-color: hsla(100, 15%, 35%, 100%);
+    }
+
+    details summary:active {
+        transform: translateX(2px) translateY(2px);
+        box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
+        color: hsla(100, 0%, 5%, 100%);
+        cursor: pointer;
+    }
+
+    details[open] .nav-links {
+        opacity: 0.95;
+        pointer-events: auto;
+        transform: translateY(0);
+        transition: 0.5s ease;
     }
     
-    .page-hero h2 {
-        font-size: clamp(1.5rem, 3vw, 5rem);
-        color: hsl(0, 0%, 20%, 100%)
+    .nav-links {
+        position: absolute;
+        top: calc(100% + calc(var(--scale) * 1));
+        right: calc(var(--scale) * 1);
+        z-index: 10;
+        width: max-content;
+        min-width: 5rem;
+        height: auto;
+        padding: calc(var(--scale) * 0.5);
+        margin: 0;
+        list-style-type: none;
+        border-radius: calc(var(--scale) * 1.5);
+        background-color: hsla(100, 15%, 20%, 95%);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: 0.5s ease;
     }
-}
 
-@media only screen and (min-width: 1024px) {
-    header {
-        height: 95vh;
-        max-height: 900rem;
+    .nav-links li {
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: calc(var(--scale) * 0.5) 0;
+        text-align: center;
     }
 
-    .page-hero {
-        padding-bottom: clamp(15rem, 52vh, 65rem);
+    .nav-links a {
+        width: 100%;
+        height: auto;
+        padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.5);
+        text-decoration: none;
+        font-family: "Montserrat Alternates", sans-serif;
+        font-size: calc(var(--scale) * 0.75);
+        color: hsl(0, 0%, 55%, 100%);
     }
-}
 
+    .nav-links a:active {
+        color: hsl(0, 0%, 55%, 100%);
+    }
+
+    .nav-links a:link {
+        color: hsl(0, 0%, 55%, 100%);
+    }
+
+    .nav-links a:hover {
+        padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.5);
+        border: none;
+        border-radius: calc(var(--scale) * 1);
+        color: hsl(0, 0%, 5%, 100%);
+        background-color: hsla(100, 15%, 35%, 100%);
+        cursor: pointer;
+    }
+
+    .nav-links a:active {
+        transform: translateX(2px) translateY(2px);
+        box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
+        color: hsla(100, 0%, 5%, 100%);
+        cursor: pointer;
+    }
+
+    /*--HOME PAGE HEADER STYLING--*/
+    .home-header {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+        position: static;
+        z-index: 5;
+        width: 100%;
+        height: 55vh;
+        padding: 0;
+        margin: 0;
+        background-image: url(flagstaff.jpeg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .home-navbar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: clamp(calc(var(--scale) * 1), 2vw, calc(var(--scale) * 2));
+        border: none;
+        border-radius: calc(var(--scale) * 2);
+    }
+
+    .home-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .home-logo h1 {
+        padding: 0;
+        margin: 0;
+        font-family: "Cookie", cursive;
+        font-size: clamp(calc(var(--scale) * 2), 7.5vw, calc(var(--scale) * 3));
+        color: hsla(100, 15%, 35%, 100%);
+    }
+
+    .home-navbar {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        width: auto;
+        height: auto;
+    }
+
+    .home-navbar details summary {
+        padding: calc(var(--scale) * 0.5) calc(var(--scale) * 1);
+        border: none;
+        border-radius: calc(var(--scale) * 2);
+        color: hsl(0, 0%, 60%, 100%);
+        background-color: hsla(100, 15%, 20%, 95%);
+    }
+
+    .home-navbar details summary:hover {
+        padding: calc(var(--scale) * 0.5) calc(var(--scale) * 1);
+        border: none;
+        border-radius: calc(var(--scale) * 2);
+        color: hsl(0, 0%, 5%, 100%);
+        background-color: hsla(100, 15%, 35%, 95%);
+    }
+
+    .home-navbar .nav-links {
+        position: absolute;
+        top: calc(75% + calc(var(--scale) * 0.5));
+        right: calc(var(--scale) * 1.25);
+        z-index: 10;
+        width: max-content;
+        min-width: 5rem;
+        height: auto;
+        padding: calc(var(--scale) * 0.5);
+        margin: 0;
+        list-style-type: none;
+        border-radius: calc(var(--scale) * 1.5);
+        background-color: hsla(100, 15%, 20%, 100%);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: 0.5s ease;
+    }
+
+    .home-page-hero {
+        display: flex;
+        justify-content: center;
+        padding: 0 calc(var(--scale) * 1) clamp(calc(var(--scale) * 1), 12vh, calc(var(--scale) * 15));
+    }
+
+    .home-page-hero h2 {
+        padding: 0;
+        margin: 0;
+        font-size: clamp(calc(var(--scale) * 0.75), 4vw, calc(var(--scale) * 2));
+        color: hsl(0, 0%, 60%, 100%);
+    }
+
+    @media only screen and (min-width: 1024px) {
+        .home-header {
+            height: 75vh;
+        }
+
+        .home-page-hero {
+            padding: 0 calc(var(--scale) * 1) clamp(calc(var(--scale) * 1), 17vh, calc(var(--scale) * 15));
+        }
+    }
+
+    @media only screen and (orientation: landscape) {
+        .home-header {
+            height: 80vh;
+        }
+    }
 /*--START OF HOME PAGE--*/
     /*--INTRO--*/
     .intro {
@@ -447,10 +536,13 @@ nav {
     }
 
     .intro-text {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
         width: 100%;
         max-width: 23rem;
         height: auto;
-        padding: 1rem 2rem;
+        padding: calc(var(--scale) * 1);
         margin: 0;
         border: none;
         border-radius: 2rem;
@@ -459,10 +551,62 @@ nav {
     }
 
     .intro-text p {
-        padding: 1rem 0;
+        padding: calc(var(--scale) * 0.5);
         margin: 0;
         font-size: calc(var(--scale) * 1);
         color: hsl(0, 0%, 60%, 100%);
+    }
+
+    .intro-link-container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+
+    .intro-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        height: auto;
+        padding: calc(var(--scale) * 0.5);
+    }
+    
+    .intro-link p {
+        text-align: center;
+    }
+    
+    .intro-link a {
+        padding: calc(var(--scale) * 0.5) calc(var(--scale) * 1);
+        border: none;
+        border-radius: calc(var(--scale) * 1.5);
+        text-align: center;
+        text-decoration: none;
+        background-color: hsla(100, 15%, 35%, 100%);
+        color: hsl(0, 0%, 5%, 100%);
+    }
+
+    .intro-link a:link {
+        color: hsl(0, 0%, 5%, 100%);
+    }
+
+    .intro-link a:visited {
+        color: hsl(0, 0%, 5%, 100%);
+    }
+
+    .intro-link a:hover {
+        color: hsl(0, 0%, 60%, 100%);
+        background-color: hsla(100, 15%, 30%, 100%);
+        cursor: pointer;
+    }
+
+    .intro-link a:active {
+        transform: translateX(2px) translateY(2px);
+        box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
+        cursor: pointer;
     }
 
     @media only screen and (min-width: 1024px) {
@@ -502,7 +646,7 @@ nav {
             width: 100%;
             min-width: 31rem;
             height: auto;
-            padding: 2rem;
+            padding: calc(var(--scale) * 2);
         }
 
         .intro-photo {
@@ -528,17 +672,16 @@ nav {
             width: 100%;
             min-width: 31rem;
             height: auto;
-            padding: 2rem;
+            padding: calc(var(--scale) * 2);
         }
 
         .intro-text {
             display: flex;
             flex-flow: column nowrap;
-            justify-content: center;
+            justify-content: space-between;
             width: 100%;
             min-width: 27rem;
             height: 41.5rem;
-            padding: 1rem 2rem;
             margin: 0;
         }
     }
@@ -661,6 +804,89 @@ nav {
         color: hsl(0, 0%, 60%, 100%);
     }
 
+    .services-links {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+        width: 100%;
+        height: auto;
+        background-color: hsla(100, 15%, 35%, 100%);
+    }
+
+    .services-links h4 {
+        text-align: center;
+        padding: calc(var(--scale) * 2) calc(var(--scale) * 1) calc(var(--scale) * 1);
+        margin: 0;
+        font-size: clamp(calc(var(--scale) * 2), 5vw, calc(var(--scale) * 3));
+    }
+
+    .link-container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding: 0 calc(var(--scale) * 1) calc(var(--scale) * 1);
+        margin: 0;
+    }
+
+    .services-link-container, .schedule-link-container {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        min-width: calc(var(--scale) * 8);
+        max-width: calc(var(--scale) * 13);
+        height: auto;
+        min-height: calc(var(--scale) * 13);
+        padding: calc(var(--scale) * 1);
+        border: calc(var(--scale) * 0.5) solid hsla(100, 15%, 20%, 100%);
+        border-radius: calc(var(--scale) * 2);
+        margin: calc(var(--scale) * 1);
+    }
+
+    .link-container p {
+        padding-bottom: clamp(calc(var(--scale) * 1), 3vw, calc(var(--scale) * 2));
+        margin: 0;
+        text-align: center;
+        font-size: clamp(calc(var(--scale) * 0.75), 3vw, calc(var(--scale) * 1.5));
+    }
+
+    .link-container a {
+        width: max-content;
+        height: auto;
+        padding: calc(var(--scale) * 0.75) calc(var(--scale) * 1.25);
+        border: none;
+        border-radius: calc(var(--scale) * 1.5);
+        text-align: center;
+        text-decoration: none;
+        font-size: clamp(calc(var(--scale) * 0.75), 2vw, calc(var(--scale) * 1));
+        color: hsl(0, 0%, 60%, 100%);
+        background-color: hsla(100, 15%, 20%, 100%);
+    }
+
+    .link-container a:link {
+        color: hsl(0, 0%, 60%, 100%);
+    }
+
+    .link-container a:visited {
+        color: hsl(0, 0%, 60%, 100%);
+    }
+
+    .link-container a:hover {
+        background-color: hsla(100, 15%, 25%, 100%);
+        color: hsl(0, 0%, 60%, 100%);
+    }
+
+    .link-container a:active {
+        transform: translateX(2px) translateY(2px);
+        box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
+    }
+
     .services h3 {
         align-items: center;
         text-align: center;
@@ -695,6 +921,7 @@ nav {
         inset: 0;
         background: rgba(255, 255, 255, 0.2);
         z-index: 1;
+        pointer-events: none;
     }
 
     .services-individual {
@@ -753,7 +980,7 @@ nav {
         border-radius: 2rem;
         text-decoration: none;
         font-size: clamp(0.75rem, 2.5vw, 1.25rem);
-        background-color: hsla(100, 15%, 20%, 100%);
+        background-color: hsla(100, 15%, 20%, 95%);
         color:hsl(0, 0%, 60%, 100%);
     }
 
@@ -766,15 +993,15 @@ nav {
     }
 
     .services-individual a:hover {
+        color: hsl(0, 0%, 5%, 100%);
+        background-color: hsla(100, 15%, 35%, 95%);
         cursor: pointer;
-        background-color: hsla(100, 15%, 15%, 75%);
-        color: hsl(0, 0%, 65%, 100%)
     }
 
     .services-individual a:active {
+        transform: translateX(2px) translateY(2px);
+        box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
         cursor: pointer;
-        background-color: hsla(100, 15%, 25%, 75%);
-        color: hsl(0, 0%, 70%, 100%)
     }
 
     .services-desktop-tablet {
@@ -798,7 +1025,7 @@ nav {
             top: 0;
             width: 100%;
             height: auto;
-            padding: 3rem 3rem 5rem 3rem;
+            padding: 3rem;
         }
 
         .offered-services {
