@@ -1185,6 +1185,12 @@ body {
         color:hsl(0, 0%, 60%, 100%)
     }
 
+    @media only screen and (min-width: 1200px) {
+        .endorsement-container {
+            top: calc(var(--sticky-header-offset) + calc(var(--endorsement-heading-padding) * 2) + var(--endorsement-heading-size) + calc(var(--scale) * 0.5));
+        }
+    }
+
     /*--INSURANCE--*/
     .insurance {
         display: flex;
