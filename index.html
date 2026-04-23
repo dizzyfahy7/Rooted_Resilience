@@ -5,90 +5,75 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rooted Resilience</title>
         <link rel="stylesheet" href="styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Distressed&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <!--PAGE HERO-->
-        <div class="home-pagehero-container">
-            <div class="home-pagehero">
-                <div class="home-pagehero-logo">
-                    <h1>Rooted Resilience</h1>
-                </div>
+        <section class="home-pagehero">
+            <h1 class="brand">
+                <span class="brand-rooted">
+                    <div>Rooted</div>
+                    <img src="logo-black.png" alt="">
+                </span>
+                
+                <span class="brand-resilience">Resilience</span>
+            </h1>
 
-                <div class="home-pagehero-text">
-                    <h2>Solution-Oriented, Compassionate Healing</h2>
-                </div>
-            </div>
-        </div>
+            <h2>Solution-Oriented, Compassionate Healing</h2>
+        </section>
 
         <!--HEADER-->
-        <header class="global-header">
-                <div class="navbar-content">
-                    <div class="logo">
-                        <a href="index.html">Rooted Resilience</a>
-                    </div>
+        <header>
+            <nav>
+                <a href="index.html"><img src="logo-light.png"><p>&nbsp;Rooted Resilience</p></a>
 
-                    <nav>
-                        <details>
-                            <summary>Menu</summary>
+                <details>
+                    <summary>Menu</summary>
 
-                            <ul class="nav-links">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="schedule.html">Schedule</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </details>
-                    </nav>
-                </div>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </details>
+            </nav>
         </header>
 
         <!--MAIN CONTENT-->
-        <main>
-            <!--ABOUT-->
-            <div class="intro">
-                <div class="meet-courtney">
+        <main class="home-main">
+            <!--INTRO SECTION-->
+            <section class="intro">
+                <div class="intro-photo">
                     <h2>Meet Courtney</h2>
+
+                    <img src="Image.png">
                 </div>
 
-                <div class="intro-container" id="intro-container-photo">
-                    <div class="intro-photo">
-                        <img src="Image.png">
+                <article class="intro-text">
+                    <p>As the founder and owner of Rooted Resilience Counseling, I am dedicated to helping others navigate life's transitions, losses, and struggles.</p>
+
+                    <p>Using an integrative, evidence-based approach, I offer a safe, collaborative space where clients feel empowered to explore and heal.</p>
+
+                    <p>I work primarily with the adult and geriatric population who are working through the challenges of grief and trauma, particularly those related to their relationships or family dynamics.</p>
+
+                    <p>We all experience grief, stress, and trauma—why go through it alone? Let me help you find the tools, skills, and confidence to takle your challenges.</p>
+
+                    <div class="intro-link">
+                        <p>Learn more </p>
+
+                        <a href="about.html">About Me</a>
                     </div>
-                </div>
-
-                <div class="intro-container" id="intro-container-text">
-                    <div class="intro-text">
-                        <p>As the founder and owner of Rooted Resilience Counseling, I am dedicated to helping others navigate life's transitions, losses, and struggles.</p>
-
-                        <p>Using an integrative, evidence-based approach, I offer a safe, collaborative space where clients feel empowered to explore and heal.</p>
-
-                        <p>I work primarily with the adult and geriatric population who are working through the challenges of grief and trauma, particularly those related to their relationships or family dynamics.</p>
-
-                        <p>We all experience grief, stress, and trauma—why go through it alone? Let me help you find the tools, skills, and confidence to takle your challenges.</p>
-
-                        <div class="intro-link-container">
-                            <p>Learn more </p>
-
-                            <div class="intro-link">
-                                <a href="about.html">About Me</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </article>    
+            </section>
 
             <!--SERVICES-->
-            <div class="services">
-                <div class="specialties">
+            <section class="services">
+                <div class="specialties-modalities-container">
+                    <div class="specialties">
+                        <h2>Specialties</h2>
 
-                    <h2>Specialties</h2>
-
-                    <div class="specialties-list">
                         <ul>
                             <li>Anxiety and Depression</li>
                             <li>Trauma and PTSD</li>
@@ -96,13 +81,10 @@
                             <li>Pregnancy, Prenatal and Postpartum</li>
                         </ul>
                     </div>
-                </div>
 
-                <div class="modalities">
-
-                    <h2>Modalities</h2>
-
-                    <div class="modalities-list">
+                    <div class="modalities">
+                        <h2>Modalities</h2>
+                        
                         <ul>
                             <li>EMDR</li>
                             <li>CBT</li>
@@ -112,108 +94,37 @@
                     </div>
                 </div>
 
-                <div class="services-links">
-                    <h4>Learn more about</h4>
+                <h3 class="learn-more">Learn more about</h3>
+
+                <div class="link-container">
+                    <div class="services-link-container">
+                        <p>The services I offer</p>
+                        <a href="services.html">Services</a>
+                    </div>
+
+                    <div class="schedule-link-container">
+                        <p>Why I use Headway</p>
+                        <a href="schedule.html">Schedule</a>
+                    </div>
+                </div>
+
+                <h3 class="settings">In-Person and Virtual settings available</h3>
+                
+                <div class="bridge">
+                    <div class="text-container">
+                        <h4>Are you ready?</h4>
                     
-                    <div class="link-container">
-                        <div class="services-link-container">
-                            <p>The services I offer</p>
-                            <a href="services.html">Services</a>
-                        </div>
+                        <h5>Let's cross that bridge together.</h5>
 
-                        <div class="schedule-link-container">
-                            <p>Why I use Headway</p>
-                            <a href="schedule.html">Schedule</a>
-                        </div>
+                        <a href="https://care.headway.co/providers/courtney-carver">Book Now</a>
                     </div>
                 </div>
-                        
-                <h3>In-Person and Virtual settings available</h3>
-
-                <div class="services-individual-container">
-                    <div class="services-individual">
-                        <div class="services-individual-text">
-                            <div class="ready">
-                                <h4>Are you ready?</h4>
-                                <h5>Let's cross that bridge together.</h5>
-                            </div>
-
-                            <div class="book-now">
-                                <a href="https://care.headway.co/providers/courtney-carver?utm_source=pem&utm_medium=direct_link&utm_campaign=103137">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--SERVICES DESKTOP/TABLET VERSION-->
-            <div class="services-desktop-tablet">
-                <div class="offered-services-container">
-                    <div class="offered-services">
-                        <div class="specialties">
-                            <h2>Specialties</h2>
-                            <div class="specialties-list">
-                                <ul>
-                                    <li>Anxiety and Depression</li>
-                                    <li>Trauma and PTSD</li>
-                                    <li>Grief, pregnancy loss, and infertility</li>
-                                    <li>Pregnancy, Prenatal and Postpartum</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="modalities">
-                            <h2>Modalities</h2>
-                            <div class="modalities-list">
-                                <ul>
-                                    <li>EMDR</li>
-                                    <li>CBT</li>
-                                    <li>Emotion Focused</li>
-                                    <li>Person-Centered</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="services-links">
-                    <h4>Learn more about</h4>
-
-                    <div class="link-container">
-                        <div class="services-link-container">
-                            <p>The services I offer</p>
-                            <a href="services.html">Services</a>
-                        </div>
-
-                        <div class="schedule-link-container">
-                            <p>Why I use Headway</p>
-                            <a href="schedule.html">Schedule</a>
-                        </div>
-                    </div>
-                </div>
-
-                <h3>In-Person and Virtual settings available</h3>
-
-                <div class="services-individual-container">
-                    <div class="services-individual">
-                        <div class="services-individual-text">
-                            <div class="ready">
-                                <h4>Are you ready?</h4>
-                                <h5>Let's cross that bridge together.</h5>
-                            </div>
-
-                            <div class="book-now">
-                                <a href="https://care.headway.co/providers/courtney-carver">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
             
             <!--ENDORSEMENTS-->
-            <div class="endorsement">
+            <section class="endorsement">
                 <h2>Endorsements</h2>
-                
+
                 <div class="endorsement-container">
                     <div class="endorsement-text">
                         <h4>Sera Gray, Clinical Social Worker/Therapist, LCSW</h4>
@@ -241,11 +152,11 @@
                         <p>Courtney is an amazing, kind, and dedicated therapist. She meets each client from an authentic and nonjudgmental perspective with particular expertise in trauma and how we, as human beings, respond to traumatic events. I highly recommend Courtney!</p>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!--INSURANCE-->
-            <div class="insurance">
-                <h3>Accepted Insurances</h3>
+            <section class="insurance">
+                <h2>Accepted Insurances</h2>
 
                 <div class="insurance-photo-list">
                     <img class="insurance-photo" src="aetna.png">
@@ -256,23 +167,20 @@
                     <img class="insurance-photo" src="oxford.png">
                     <img class="insurance-photo" src="uhc.png">
                 </div>
-            </div>
+            </section>
             
             <!--SCHEDULE-->
-            <div class="schedule">
+            <section class="schedule">
                 <div class="schedule-hero">
-                    <div class="honest">
-                        <h4>Let's be honest...</h4>
-                    </div>
+                    <h2 class="honest">Let's be honest...</h2>
 
-                    <div class="avoidance">
-                        <h5>Avoidance is trauma's best friend</h5>
-                    </div>
+                    <h3 class="avoidance">Avoidance is trauma's best friend</h3>
                 </div>
 
                 <div class="consultation">
                     <h4>So let's not waste time</h4>
-                    <p>Schedule a 15 minute consultation or contact for more information</p>
+
+                    <h5>Schedule a 15 minute consultation or contact for more information</h5>
 
                     <div class="consultation-links">
                         <div class="book-now">
@@ -284,15 +192,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+        </main>
 
         <!--FOOTER-->
         <footer>
-            <div class="footer-container">
+            <address class="footer-container">
                 <p class="copyright">&copy; 2025-2026 Rooted Resilience</p>
 
-                <p class="address">119 East Terrace Avenue Suite G, Flagstaff, AZ 86001</p>
-            </div>
+                <p>119 East Terrace Avenue Suite G, Flagstaff, AZ 86001</p>
+            </address>
         </footer>
     </body>
 </html>
