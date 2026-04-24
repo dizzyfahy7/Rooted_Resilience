@@ -300,6 +300,7 @@ details[open] .mobile-nav-links {
     padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
     border: none;
     border-radius: calc(var(--scale) * 1);
+    font-size: calc(var(--scale) * 1);
     color: hsl(0, 0%, 10%, 100%);
     background-color: hsl(100, 15%, 40%, 100%);
     cursor: pointer;
