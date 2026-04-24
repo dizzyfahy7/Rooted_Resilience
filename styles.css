@@ -605,8 +605,6 @@ details[open] .nav-links {
     }
 
     .specialties-modalities-padding {
-        position: sticky;
-        top: var(--sticky-navbar-offset);
         z-index: 1;
         padding: calc(var(--scale) * 2);
     }
