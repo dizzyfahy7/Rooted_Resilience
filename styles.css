@@ -1144,9 +1144,7 @@ details[open] .nav-links {
     }
 
     .consultation-links a {
-        padding: calc(var(--scale) * 0.5) calc(var(--scale) * 1);
-        border: none;
-        border-radius: calc(var(--scale) * 2);
+        padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
         text-decoration: none;
         font-size: calc(var(--scale) * 0.75);
         background-color: hsl(100, 15%, 20%, 100%);
