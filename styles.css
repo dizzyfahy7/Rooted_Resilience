@@ -75,7 +75,7 @@ a {
     --scale: clamp(0.9rem, 1.2vw + 0.5rem, 1.2rem);
     
     /*--STICKY SETTINGS--*/
-    --sticky-navbar-offset: calc(var(--scale) * 5.125);
+    --sticky-navbar-offset: calc(var(--scale) * 5.65);
     
     /*--TILE SETTINGS--*/
     --tile-radius: calc(var(--scale) * 2);
@@ -99,8 +99,12 @@ a {
     }
 
     /*--BUTTON SETTINGS--*/
-    details summary:hover,
-    .nav-links a:hover,
+    .mobile-nav-links,
+    .mobile-nav-links a:hover,
+    .desktop-nav-links,
+    .desktop-nav-links a:hover,
+    .menu-toggle,
+    .menu-togle:hover,
     .intro-link a,
     .intro-link a:hover,
     .services-link-container a,
@@ -120,7 +124,8 @@ a {
         border: var(--tile-border);
         border-radius: var(--tile-radius);
         box-shadow: var(--tile-shadow);
-        transition: background-color 0.3s ease;
+        font-size: calc(var(--scale) * 1.25);
+        transition: background-color 0.4s ease;
     }
 
 html {
@@ -165,11 +170,11 @@ nav {
 .nav-logo {
     display: flex;
     flex-flow: row nowrap;
+    align-items: center;
     width: fit-content;
     height: auto;
     padding: 0;
     margin: 0;
-    text-align: center;
     text-decoration: none;
     line-height: 1;
     font-family: "MsMadi", cursive;
@@ -180,87 +185,86 @@ nav {
 }
 
 .nav-logo a:active {
-    text-shadow: 1px 1px 0;
+    box-shadow: 1px 1px 0;
     cursor: pointer;
 }
 
 .nav-logo img {    
     width: auto;
-    max-height: calc(var(--scale) * 1.3);
+    max-height: calc(var(--scale) * 2.5);
     height: auto;
-    aspect-ratio: 1 / 1;
+    padding-bottom: calc(var(--scale) 0.5);
     margin: 0;
 }
 
-.nav-logo span {
-    width: fit-content;
-    height: auto;
-    margin: 0;
-    text-align: center;
-    text-decoration: none;
-    line-height: 1;
-    font-family: "MsMadi", cursive;
-    font-size: calc(var(--scale) * 1.5);
-}
-
-details, summary {
-    border: 1px solid hsl(100, 15%, 20%, 0);
-    border-radius: var(--tile-radius);
-    box-shadow: 
-        0 2px 0 hsl(100, 15%, 18%, 0),
-        0 6px 12px hsla(0, 0%, 0%, 0);
-}
-
-details summary{
-    display: flex;
-    flex-flow: column nowrap;
+.menu-toggle {
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     position: relative;
     z-index: 10;
-    width: 100%;
-    height: auto;
-    padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
+    width: calc(var(--scale) * 2.5);
+    height: calc(var(--scale) * 2.5);
     margin: 0;
-    text-align: center;
+    border: none;
+    border-radius: calc(var(--scale) * 0.75);
+    box-shadow: none;
     list-style-type: none;
-    font-family: "Montserrat Alternates", sans-serif;
-    font-size: calc(var(--scale) * 1);
-    font-weight: 300;
-    font-style: normal;
     color: hsl(49, 20%, 68%, 100%);
     cursor: pointer;
 }
 
-details summary:hover {
-    padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
+.menu-toggle::before,
+.menu-toggle::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: calc(var(--scale) * 1.5);
+    height: 2px;
+    background-color: currentColor;
+    transform: translateX(-50%);
+}
+
+.menu-toggle::before {
+    top: calc(var(--scale) * 0.6);
+    box-shadow: 0 calc(var(--scale) * 0.6) 0 currentColor;
+}
+
+.menu-toggle::after {
+    top: calc(var(--scale) * 1.8);
+}
+
+.menu-toggle:hover {
     color: hsl(0, 0%, 10%, 100%);
     background-color: hsl(100, 15%, 40%, 100%);
 }
 
-details summary:active {
+.menu-toggle:active {
     transform: translateX(2px) translateY(2px);
     box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
-    color: hsl(100, 0%, 10%, 100%);
-    cursor: pointer;
 }
 
-details[open] .nav-links {
+.sr-only {
+    color: transparent;
+}
+
+details[open] .mobile-nav-links {
     opacity: 0.95;
     pointer-events: auto;
     transform: translateY(0);
     transition: 0.5s ease;
 }
 
-.nav-links {
+.mobile-nav-links {
     display: flex;
     flex-flow: column nowrap;
     position: absolute;
     top: calc(100% + calc(var(--scale) * 1));
-    right: calc(var(--scale) * 0.5);
+    right: calc(var(--scale) * 0.1);
     z-index: 10;
     width: max-content;
     min-width: calc(var(--scale) * 5);
+    max-width: calc(var(--scale) * 7);
     height: auto;
     padding: calc(var(--scale) * 0.5) calc(var(--scale) * 0.75);
     margin: 0;
@@ -269,11 +273,10 @@ details[open] .nav-links {
     background-color: hsl(100, 15%, 20%, 95%);
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-10px);
-    transition: 0.5s ease;
+    
 }
 
-.nav-links li {
+.mobile-nav-links li {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -282,26 +285,18 @@ details[open] .nav-links {
     margin: 0;
 }
 
-.nav-links a {
+.mobile-nav-links a {
     display: inline-block;
     width: fit-content;
     height: auto;
     padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
     text-decoration: none;
     font-family: "Montserrat Alternates", sans-serif;
-    font-size: calc(var(--scale) * 0.75);
+    font-size: calc(var(--scale) * 1);
     color: hsl(49, 20%, 68%, 100%);
 }
 
-.nav-links a:link {
-    color: hsl(49, 20%, 68%, 100%);
-}
-
-.nav-links a:visited {
-    color: hsl(49, 20%, 68%, 100%);
-}
-
-.nav-links a:hover {
+.mobile-nav-links a:hover {
     padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
     border: none;
     border-radius: calc(var(--scale) * 1);
@@ -310,13 +305,72 @@ details[open] .nav-links {
     cursor: pointer;
 }
 
-.nav-links a:active {
+.mobile-nav-links a:active {
     transform: translateX(2px) translateY(2px);
     box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
     cursor: pointer;
 }
 
-/*--HOME PAGE - MAIN CONTENT--*/
+.desktop-nav-links {
+    display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+    details {
+        display: none;
+    }
+
+    .desktop-nav-links {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+        list-style-type: none;
+    }
+
+    .desktop-nav-links li {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        padding: calc(var(--scale) * 0.25) 0;
+        margin: 0;
+    }
+
+    .desktop-nav-links a {
+        display: inline-block;
+        width: fit-content;
+        height: auto;
+        padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
+        text-decoration: none;
+        font-family: "Montserrat Alternates", sans-serif;
+        font-size: calc(var(--scale) * 1);
+        color: hsl(49, 20%, 68%, 100%);
+    }
+
+    .desktop-nav-links a:hover {
+        padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
+        border: none;
+        border-radius: calc(var(--scale) * 1);
+        font-size: calc(var(--scale) * 1);
+        color: hsl(0, 0%, 10%, 100%);
+        background-color: hsl(100, 15%, 40%, 100%);
+        cursor: pointer;
+    }
+
+    .desktop-nav-links a:active {
+        transform: translateX(2px) translateY(2px);
+        box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
+    }
+}
+
+/*--HOME PAGE--*/
 .home-main {
     display: flex;
     flex-flow: column nowrap;
@@ -373,7 +427,7 @@ details[open] .nav-links {
     .brand-rooted img {
         display: block;
         width: auto;
-        height: clamp(calc(var(--scale) * 3), 17vw, calc(var(--scale) * 8));
+        height: clamp(calc(var(--scale) * 3), 18vw, calc(var(--scale) * 8));
     }
 
     .brand-resilience {
@@ -417,7 +471,7 @@ details[open] .nav-links {
         }
 
         .brand-rooted img {
-            height: clamp(calc(var(--scale) * 4), 8vw, calc(var(--scale) * 7));
+            height: clamp(calc(var(--scale) * 4), 9vw, calc(var(--scale) * 7));
             padding-bottom: calc(var(--scale) * 0.75);
         }
 
@@ -438,7 +492,7 @@ details[open] .nav-links {
         align-items: center;
         width: 100%;
         height: auto;
-        padding: calc(var(--scale) * 2);
+        padding: 0 calc(var(--scale) * 2) calc(var(--scale) * 2);
         margin: 0;
     }
 
@@ -515,13 +569,14 @@ details[open] .nav-links {
     }
     
     .intro-link p {
+        padding: 0 calc(var(--scale) * 1) 0 0;
         text-align: center;
+        font-size: calc(var(--scale) * 1.25);
     }
     
     .intro-link a {
         text-align: center;
         text-decoration: none;
-        font-size: calc(var(--scale) * 0.75);
         color: hsl(49, 20%, 68%, 100%);
         background-color: hsl(100, 15%, 15%, 100%);
     }
@@ -538,7 +593,7 @@ details[open] .nav-links {
         cursor: pointer;
     }
 
-    @media only screen and (min-width: 768px), only screen and (orientation: landscape) and (max-height: 600px) {
+    @media only screen and (min-width: 1024px), only screen and (orientation: landscape) and (max-width: 950px) {
         .intro {
             display: grid;
             grid-template-rows: auto;
@@ -590,7 +645,15 @@ details[open] .nav-links {
         }
 
         .intro-link p {
-            padding: 0 calc(var(--scale) * 0.5) 0 0;
+            font-size: calc(var(--scale) * 1);
+        }
+
+        .intro-link a {
+            font-size: calc(var(--scale) * 1);
+        }
+
+        .intro-link a:hover {
+            font-size: calc(var(--scale) * 1);
         }
     }
 
@@ -705,7 +768,7 @@ details[open] .nav-links {
     .learn-more h3 {
         width: 100%;
         height: auto;
-        padding: calc(var(--scale) * 2);
+        padding: calc(var(--scale) * 2) 0;
         margin: 0;
         text-align: center;
         font-size: calc(var(--scale) * 2.25);
@@ -753,13 +816,12 @@ details[open] .nav-links {
         padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
         text-align: center;
         text-decoration: none;
-        font-size: calc(var(--scale) * 1);
         color: hsl(49, 20%, 68%, 100%);
         background-color: hsl(100, 15%, 20%, 100%);
     }
 
     .link-container a:hover {
-        background-color: hsl(100, 15%, 30%, 100%);
+        background-color: hsl(100, 15%, 35%, 100%);
         color: hsl(0, 0%, 10%, 100%);
         cursor: pointer;
     }
@@ -776,7 +838,7 @@ details[open] .nav-links {
         width: 100%;
         height: auto;
         padding: calc(var(--scale) * 1);
-        margin: 0;
+        margin: calc(var(--scale) * 2) 0 0;
         font-size: clamp(calc(var(--scale) * 0.75), 4vw, calc(var(--scale) * 2.5));
         color: hsl(0, 0%, 10%, 100%);
         background-color: hsl(100, 15%, 40%, 100%);
@@ -849,22 +911,13 @@ details[open] .nav-links {
         z-index: 3;
         padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
         text-decoration: none;
-        font-size: clamp(0.75rem, 2.5vw, 1.25rem);
         background-color: hsl(100, 15%, 20%, 95%);
-        color: hsl(49, 20%, 68%, 100%);
-    }
-
-    .bridge a:link {
-        color: hsl(49, 20%, 68%, 100%);
-    }
-
-    .bridge a:visited {
         color: hsl(49, 20%, 68%, 100%);
     }
 
     .bridge a:hover {
         color: hsl(0, 0%, 10%, 100%);
-        background-color: hsl(100, 15%, 35%, 95%);
+        background-color: hsl(100, 15%, 40%, 95%);
         cursor: pointer;
     }
 
@@ -874,10 +927,10 @@ details[open] .nav-links {
         cursor: pointer;
     }
 
-    @media only screen and (min-width: 768px), only screen and (orientation: landscape) and (max-height: 600px) {
+    @media only screen and (min-width: 1024px), only screen and (orientation: landscape) and (max-width: 950px) {
         .specialties-modalities-padding {
             position: static;
-            padding-bottom: calc(var(--scale) * 3);
+            padding: calc(var(--scale) * 2) 0 calc(var(--scale) * 3);
         }
         
         .specialties-modalities-container {
@@ -925,7 +978,7 @@ details[open] .nav-links {
         width: 100%;
         max-width: calc(var(--scale) * 49);
         height: auto;
-        padding: calc(var(--scale) * 2);
+        padding: 0 calc(var(--scale) * 2);
 
         --heading-block-height: clamp(calc(var(--scale) * 6.5), 15vw, calc(var(--scale) * 7));
         --card-top: calc(var(--sticky-navbar-offset) + var(--heading-block-height));
@@ -957,7 +1010,7 @@ details[open] .nav-links {
         z-index: 2;
         width: 100%;
         height: auto;
-        padding: calc(var(--scale) * 0.5);
+        padding: calc(var(--scale) * 1.5);
         margin-bottom: calc(var(--scale) * 2);
         border: none;
         border-radius: calc(var(--scale) * 2);
@@ -965,19 +1018,24 @@ details[open] .nav-links {
     }
 
     .endorsement-text h3 {
-        padding: calc(var(--scale) * 1);
+        padding-bottom: calc(var(--scale) * 0.5);
         margin: 0;
         font-size: calc(var(--scale) * 1.25);
-        font-weight: 400;
         color: hsl(49, 20%, 68%, 100%);
     }
 
     .endorsement-text p {
-        padding: calc(var(--scale) * 1);
+        padding-top: calc(var(--scale) * 0.5);
         margin: 0;
         line-height: 1.5rem;
-        font-size: calc(var(--scale) * 0.75);
+        font-size: calc(var(--scale) * 1);
         color: hsl(49, 20%, 68%, 100%);
+    }
+
+    @media only screen and (min-width: 1024px), only screen and (orientation: landscape) and (max-width: 950px) {
+        .endorsement-text p {
+            font-size: calc(var(--scale) * 0.75);
+        }
     }
 
     /*--INSURANCE--*/
@@ -1144,13 +1202,12 @@ details[open] .nav-links {
     .consultation-links a {
         padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
         text-decoration: none;
-        font-size: calc(var(--scale) * 0.75);
         background-color: hsl(100, 15%, 20%, 100%);
         color: hsl(49, 20%, 68%, 100%);
     }
 
     .consultation-links a:hover {
-        background-color: hsl(100, 15%, 30%, 100%);
+        background-color: hsl(100, 15%, 35%, 100%);
         color: hsl(100, 0%, 10%, 100%);
         cursor: pointer;
     }
