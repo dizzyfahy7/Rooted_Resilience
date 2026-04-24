@@ -191,7 +191,7 @@ nav {
 
 .nav-logo img {    
     width: auto;
-    max-height: calc(var(--scale) * 2.5);
+    max-height: calc(var(--scale) * 2);
     height: auto;
     padding-bottom: calc(var(--scale) 0.5);
     margin: 0;
@@ -203,8 +203,8 @@ nav {
     align-items: center;
     position: relative;
     z-index: 10;
-    width: calc(var(--scale) * 2.5);
-    height: calc(var(--scale) * 2.5);
+    width: calc(var(--scale) * 2);
+    height: calc(var(--scale) * 2);
     margin: 0;
     border: none;
     border-radius: calc(var(--scale) * 0.75);
@@ -219,19 +219,19 @@ nav {
     content: "";
     position: absolute;
     left: 50%;
-    width: calc(var(--scale) * 1.5);
+    width: calc(var(--scale) * 1.25);
     height: 2px;
     background-color: currentColor;
     transform: translateX(-50%);
 }
 
 .menu-toggle::before {
-    top: calc(var(--scale) * 0.6);
-    box-shadow: 0 calc(var(--scale) * 0.6) 0 currentColor;
+    top: calc(var(--scale) * 0.5);
+    box-shadow: 0 calc(var(--scale) * 0.5) 0 currentColor;
 }
 
 .menu-toggle::after {
-    top: calc(var(--scale) * 1.8);
+    top: calc(var(--scale) * 1.5);
 }
 
 .menu-toggle:hover {
@@ -594,7 +594,7 @@ details[open] .mobile-nav-links {
         cursor: pointer;
     }
 
-    @media only screen and (min-width: 1024px), only screen and (orientation: landscape) and (max-width: 950px) {
+    @media only screen and (min-width: 1024px), only screen and (orientation: landscape) {
         .intro {
             display: grid;
             grid-template-rows: auto;
@@ -680,11 +680,15 @@ details[open] .mobile-nav-links {
         align-items: center;
         row-gap: calc(var(--scale) * 2);
         column-gap: calc(var(--scale) * 1);
-        width: 100%;
+        width: fit-content;
         max-width: calc(var(--scale) * 22);
         height: auto;
+        padding: calc(var(--scale) * 1) calc(var(--scale) * 2) calc(var(--scale) * 2);
         border: calc(var(--scale) * 1) solid hsl(100, 15%, 25%, 100%);
         border-radius: calc(var(--scale) * 2);
+        box-shadow:
+            inset 2px 2px 0 hsl(100, 15%, 18%),
+            inset 0 6px 12px hsla(0, 0%, 0%, 0.15);
     }
 
     .specialties, .modalities {
@@ -696,14 +700,6 @@ details[open] .mobile-nav-links {
         margin: 0;
         border-radius: calc(var(--scale) * 2);
         background-color: hsl(100, 15%, 40%, 100%);
-    }
-
-    .specialties {
-        padding-top: calc(var(--scale) * 1);
-    }
-
-    .modalities {
-        padding-bottom: calc(var(--scale) * 2);
     }
 
     .specialties h2, .modalities h2 {
@@ -799,6 +795,9 @@ details[open] .mobile-nav-links {
         padding: calc(var(--scale) * 1);
         border: calc(var(--scale) * 0.5) solid hsl(100, 15%, 25%, 100%);
         border-radius: calc(var(--scale) * 2);
+        box-shadow:
+            inset 2px 2px 0 hsl(100, 15%, 18%),
+            inset 0 6px 12px hsla(0, 0%, 0%, 0.15);
     }
 
     .link-container p {
@@ -928,20 +927,18 @@ details[open] .mobile-nav-links {
         cursor: pointer;
     }
 
-    @media only screen and (min-width: 1024px), only screen and (orientation: landscape) and (max-width: 950px) {
+    @media only screen and (min-width: 1024px), only screen and (orientation: landscape) {
         .specialties-modalities-padding {
             position: static;
             padding: calc(var(--scale) * 2) 0 calc(var(--scale) * 3);
         }
         
         .specialties-modalities-container {
-            justify-content: center;
-            column-gap: calc(var(--scale) * 6);
-            min-width: calc(var(--scale) * 40);
-        }
-
-        .specialties, .modalities {
-            padding: calc(var(--scale) * 2) 0;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            column-gap: calc(var(--scale) * 2);
+            max-width: calc(var(--scale) * 40);
+            padding-top: calc(var(--scale) * 2);
         }
 
         .specialties h2, .modalities h2 {
