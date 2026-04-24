@@ -1,4 +1,4 @@
-/*--GENERAL FONT SPECIFICATIONS--*/
+/*--GLOBAL FONT SPECIFICATIONS--*/
 @font-face {
     src: url('MsMadi-Regular.ttf') format('truetype');
     font-family: 'MsMadi';
@@ -53,7 +53,7 @@ h5 {
 p {
     font-family: "Montserrat Alternates", sans-serif;
     font-weight: 300;
-    line-height: 1.6rem;
+    line-height: 1.6;
     color: hsl(49, 20%, 68%, 100%);
 }
 
@@ -63,7 +63,7 @@ a {
     color: hsl(49, 20%, 68%, 100%);
 }
 
-/*--GENERAL STYLING--*/
+/*--GLOBAL STYLING--*/
 *,
 *::before,
 *::after {
@@ -71,10 +71,57 @@ a {
 }
 
 :root {
+    /*--RESPONSIVE SCALING UNIT--*/
     --scale: clamp(0.9rem, 1.2vw + 0.5rem, 1.2rem);
-    --sticky-header-offset: calc(var(--scale) * 5.175);
-    --sticky-header-offset-2: calc(var(--scale) * 11.875);
+    
+    /*--STICKY SETTINGS--*/
+    --sticky-navbar-offset: calc(var(--scale) * 5.125);
+    
+    /*--TILE SETTINGS--*/
+    --tile-radius: calc(var(--scale) * 2);
+    --tile-shadow:
+        0 2px 0 hsl(100, 15%, 18%),
+        0 6px 12px hsla(0, 0%, 0%, 0.15);
+    --tile-border: 1px solid hsla(100, 15%, 15%, 0.5);
 }
+
+    /*--TILED ITEMS--*/
+    nav,
+    .nav-links,
+    .intro-photo img,
+    .intro-text,
+    .specialties li,
+    .modalities li,
+    .endorsement-text {
+        border: var(--tile-border);
+        border-radius: var(--tile-radius);
+        box-shadow: var(--tile-shadow);
+    }
+
+    /*--BUTTON SETTINGS--*/
+    details summary:hover,
+    .nav-links a:hover,
+    .intro-link a,
+    .intro-link a:hover,
+    .services-link-container a,
+    .services-link-container a:hover,
+    .schedule-link-container a,
+    .schedule-link-container a:hover,
+    .bridge a,
+    .bridge a:hover,
+    .book-now a,
+    .book-now a:hover,
+    .contact a,
+    .contact a:hover {
+        width: fit-content;
+        height: auto;
+        padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
+        margin: 0;
+        border: var(--tile-border);
+        border-radius: var(--tile-radius);
+        box-shadow: var(--tile-shadow);
+        transition: background-color 0.3s ease;
+    }
 
 html {
     width: 100%;
@@ -90,107 +137,6 @@ body {
     background-color: hsl(100, 15%, 40%, 100%);
 }
 
-/*--HOME PAGEHERO--*/
-.home-pagehero {
-    position: relative;
-    width: 100%;
-    height: 70vh;
-    padding: 0;
-    margin: 0;
-    background-image: url(home-mountain-mobile.jpeg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.home-pagehero .brand {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: auto;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 12vh;
-    width: 100%;
-    height: auto;
-    padding: 0 calc(var(--scale) * 1);
-    margin: 0;
-    font-size: clamp(calc(var(--scale) * 5), 20vw, calc(var(--scale) * 8));
-    line-height: 1;
-}
-
-.brand-rooted {
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 0.25em;
-}
-
-.brand-rooted img {
-    display: block;
-    width: auto;
-    height: clamp(calc(var(--scale) * 3), 17vw, calc(var(--scale) * 8));
-}
-
-.brand-resilience {
-    text-align: center;
-}
-
-.home-pagehero h2 {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 6vh;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    font-size: clamp(calc(var(--scale) * 1.75), 4vw, calc(var(--scale) * 4));
-    color: hsl(49, 20%, 68%, 100%);
-}
-
-@media only screen and (min-width: 500px) {
-    .home-pagehero {
-        height: 90vh;
-        background-image: url('home-mountain-desktop.jpeg');
-    }
-    
-    .home-pagehero .brand {
-        grid-template-rows: 1fr;
-        grid-template-columns: auto auto;
-        gap: 0.25em;
-        top: 20vh;
-        font-size: clamp(calc(var(--scale) * 5), 10vw, calc(var(--scale) * 8));
-    }
-
-    .brand-rooted {
-        grid-row: 1 / 2;
-        grid-column: 1 / 2;
-        flex-flow: row-reverse nowrap;
-        justify-content: center;
-        align-items: center;
-        gap: 0.0625em;
-    }
-
-    .brand-rooted img {
-        height: clamp(calc(var(--scale) * 4), 8vw, calc(var(--scale) * 7));
-        padding-bottom: calc(var(--scale) * 0.75);
-    }
-
-    .brand-resilience {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
-    }
-
-    .home-pagehero h2 {
-        bottom: 15vh;
-    }
-}
-
-/*--HEADER--*/
 header {
     position: sticky;
     top: 0;
@@ -209,18 +155,17 @@ nav {
     position: relative;
     width: 100%;
     height: auto;
-    padding: calc(var(--scale) * 0.75) calc(var(--scale) * 1.5);
+    padding: calc(var(--scale) * 0.5) calc(var(--scale) * 1.5);
     margin: 0;
     border: none;
     border-radius: calc(var(--scale) * 2);
-    background-color: hsl(100, 15%, 25%, 95%);
+    background-color: hsl(100, 15%, 20%, 95%);
 }
 
-nav a {
+.nav-logo {
     display: flex;
     flex-flow: row nowrap;
-    align-items: bottom;
-    width: 100%;
+    width: fit-content;
     height: auto;
     padding: 0;
     margin: 0;
@@ -230,33 +175,24 @@ nav a {
     font-family: "MsMadi", cursive;
 }
 
-nav a:link {
-    color: hsl(49, 20%, 68%, 100%);
-}
-
-nav a:visited {
-    color: hsl(49, 20%, 68%, 100%);
-}
-
-nav a:hover {
+.nav-logo a:hover {
     cursor: pointer;
 }
 
-nav a:active {
+.nav-logo a:active {
     text-shadow: 1px 1px 0;
     cursor: pointer;
 }
 
-nav img {    
+.nav-logo img {    
     width: auto;
     max-height: calc(var(--scale) * 1.3);
     height: auto;
     aspect-ratio: 1 / 1;
-
     margin: 0;
 }
 
-nav p{
+.nav-logo span {
     width: fit-content;
     height: auto;
     margin: 0;
@@ -267,7 +203,15 @@ nav p{
     font-size: calc(var(--scale) * 1.5);
 }
 
-details summary {
+details, summary {
+    border: 1px solid hsl(100, 15%, 20%, 0);
+    border-radius: var(--tile-radius);
+    box-shadow: 
+        0 2px 0 hsl(100, 15%, 18%, 0),
+        0 6px 12px hsla(0, 0%, 0%, 0);
+}
+
+details summary{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -290,8 +234,6 @@ details summary {
 
 details summary:hover {
     padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
-    border: none;
-    border-radius: calc(var(--scale) * 1);
     color: hsl(0, 0%, 10%, 100%);
     background-color: hsl(100, 15%, 40%, 100%);
 }
@@ -313,15 +255,14 @@ details[open] .nav-links {
 .nav-links {
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
     position: absolute;
     top: calc(100% + calc(var(--scale) * 1));
-    right: calc(var(--scale) * 1);
+    right: calc(var(--scale) * 0.5);
     z-index: 10;
     width: max-content;
-    min-width: 5rem;
+    min-width: calc(var(--scale) * 5);
     height: auto;
-    padding: calc(var(--scale) * 0.5);
+    padding: calc(var(--scale) * 0.5) calc(var(--scale) * 0.75);
     margin: 0;
     list-style-type: none;
     border-radius: calc(var(--scale) * 1.5);
@@ -333,35 +274,38 @@ details[open] .nav-links {
 }
 
 .nav-links li {
-    width: fit-content;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     height: auto;
-    padding: 0;
-    margin: calc(var(--scale) * 0.5) 0;
+    padding: calc(var(--scale) * 0.25) 0;
+    margin: 0;
 }
 
 .nav-links a {
-    width: 100%;
+    display: inline-block;
+    width: fit-content;
     height: auto;
-    padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.5);
+    padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
     text-decoration: none;
     font-family: "Montserrat Alternates", sans-serif;
     font-size: calc(var(--scale) * 0.75);
     color: hsl(49, 20%, 68%, 100%);
 }
 
-.nav-links a:active {
-    color: hsl(0, 0%, 55%, 100%);
+.nav-links a:link {
+    color: hsl(49, 20%, 68%, 100%);
 }
 
-.nav-links a:link {
-    color: hsl(0, 0%, 55%, 100%);
+.nav-links a:visited {
+    color: hsl(49, 20%, 68%, 100%);
 }
 
 .nav-links a:hover {
-    padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.5);
+    padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
     border: none;
     border-radius: calc(var(--scale) * 1);
-    color: hsl(0, 0%, 5%, 100%);
+    color: hsl(0, 0%, 10%, 100%);
     background-color: hsl(100, 15%, 40%, 100%);
     cursor: pointer;
 }
@@ -369,7 +313,6 @@ details[open] .nav-links {
 .nav-links a:active {
     transform: translateX(2px) translateY(2px);
     box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
-    color: hsl(100, 0%, 5%, 100%);
     cursor: pointer;
 }
 
@@ -387,6 +330,107 @@ details[open] .nav-links {
         gap: calc(var(--scale) * 3);
     }
 }
+
+    /*--HOME PAGE HERO--*/
+    .homepage-hero {
+        position: relative;
+        width: 100%;
+        height: 70vh;
+        padding: 0;
+        margin: 0;
+        background-image: url(home-mountain-mobile.jpeg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .homepage-hero .brand {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: auto;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 12vh;
+        width: 100%;
+        height: auto;
+        padding: 0 calc(var(--scale) * 1);
+        margin: 0;
+        font-size: clamp(calc(var(--scale) * 5), 20vw, calc(var(--scale) * 8));
+        line-height: 1;
+    }
+
+    .brand-rooted {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 0.25em;
+    }
+
+    .brand-rooted img {
+        display: block;
+        width: auto;
+        height: clamp(calc(var(--scale) * 3), 17vw, calc(var(--scale) * 8));
+    }
+
+    .brand-resilience {
+        text-align: center;
+    }
+
+    .homepage-hero h2 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 6vh;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        font-size: clamp(calc(var(--scale) * 1.75), 4vw, calc(var(--scale) * 4));
+        color: hsl(49, 20%, 68%, 100%);
+    }
+
+    @media only screen and (min-width: 500px) {
+        .homepage-hero {
+            height: 90vh;
+            background-image: url('home-mountain-desktop.jpeg');
+        }
+        
+        .homepage-hero .brand {
+            grid-template-rows: 1fr;
+            grid-template-columns: auto auto;
+            gap: 0.25em;
+            top: 20vh;
+            font-size: clamp(calc(var(--scale) * 5), 10vw, calc(var(--scale) * 8));
+        }
+
+        .brand-rooted {
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+            flex-flow: row-reverse nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.0625em;
+        }
+
+        .brand-rooted img {
+            height: clamp(calc(var(--scale) * 4), 8vw, calc(var(--scale) * 7));
+            padding-bottom: calc(var(--scale) * 0.75);
+        }
+
+        .brand-resilience {
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+        }
+
+        .homepage-hero h2 {
+            bottom: 15vh;
+        }
+    }
+
     /*--INTRO--*/
     .intro {
         display: flex;
@@ -394,18 +438,24 @@ details[open] .nav-links {
         align-items: center;
         width: 100%;
         height: auto;
-        padding: 0;
+        padding: calc(var(--scale) * 2);
         margin: 0;
+    }
+
+    .intro-photo-container {
+        width: fit-content;
+        height: auto;
+        padding-top: calc(var(--scale) * 2);
     }
 
     .intro-photo {
         display: flex;
         flex-flow: column nowrap;
         position: sticky;
-        top: var(--sticky-header-offset);
+        top: var(--sticky-navbar-offset);
         z-index: 1;
         width: 100%;
-        max-width: calc(var(--scale) * 20);
+        max-width: calc(var(--scale) * 22);
         height: auto;
         padding: 0;
         margin: 0;
@@ -425,7 +475,7 @@ details[open] .nav-links {
 
     .intro-photo img {
         width: 100%;
-        max-width: calc(var(--scale) * 20);
+        max-width: calc(var(--scale) * 22);
         height: auto;
         padding: calc(var(--scale) * 1) 0 0;
         border: none;
@@ -439,7 +489,7 @@ details[open] .nav-links {
         justify-content: space-between;
         z-index: 2;
         width: 100%;
-        max-width: calc(var(--scale) * 20);
+        max-width: calc(var(--scale) * 22);
         height: auto;
         padding: calc(var(--scale) * 1);
         margin-top: calc(var(--scale) * 2);
@@ -462,7 +512,6 @@ details[open] .nav-links {
         align-items: center;
         width: 100%;
         height: auto;
-        padding: calc(var(--scale) * 0.5);
     }
     
     .intro-link p {
@@ -470,26 +519,16 @@ details[open] .nav-links {
     }
     
     .intro-link a {
-        padding: calc(var(--scale) * 0.5) calc(var(--scale) * 1);
-        border: none;
-        border-radius: calc(var(--scale) * 1.5);
         text-align: center;
         text-decoration: none;
-        background-color: hsl(100, 15%, 40%, 100%);
-        color: hsl(0, 0%, 10%, 100%);
-    }
-
-    .intro-link a:link {
-        color: hsl(0, 0%, 10%, 100%);
-    }
-
-    .intro-link a:visited {
-        color: hsl(0, 0%, 10%, 100%);
+        font-size: calc(var(--scale) * 0.75);
+        color: hsl(49, 20%, 68%, 100%);
+        background-color: hsl(100, 15%, 15%, 100%);
     }
 
     .intro-link a:hover {
-        color: hsl(49, 20%, 68%, 100%);
-        background-color: hsl(100, 15%, 30%, 100%);
+        color: hsl(0, 0%, 10%, 100%);
+        background-color: hsl(100, 15%, 35%, 100%);
         cursor: pointer;
     }
 
@@ -499,7 +538,7 @@ details[open] .nav-links {
         cursor: pointer;
     }
 
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 1024px), (max-height: 750px) {
         .intro {
             display: grid;
             grid-template-rows: auto;
@@ -509,7 +548,7 @@ details[open] .nav-links {
             row-gap: calc(var(--scale) * 1);
             column-gap: calc(var(--scale) * 2);
             width: 100%;
-            max-width: 981px;
+            max-width: 1024px;
             padding: calc(var(--scale) * 5) calc(var(--scale) * 2) 0;
         }
 
@@ -527,7 +566,7 @@ details[open] .nav-links {
 
         .intro-photo h2 {
             padding: 0 0 calc(var(--scale) * 1);
-            font-size: calc(var(--scale) * 1.5)
+            font-size: calc(var(--scale) * 1.75)
         }
 
         .intro-photo img {
@@ -549,6 +588,10 @@ details[open] .nav-links {
         .intro-text p {
             font-size: calc(var(--scale) * 0.75);
         }
+
+        .intro-link p {
+            padding: 0 calc(var(--scale) * 0.5) 0 0;
+        }
     }
 
     /*--SERVICES--*/
@@ -559,42 +602,52 @@ details[open] .nav-links {
         align-items: center;
         width: 100%;
         height: auto;
-        padding-top: calc(var(--scale) * 2);
-        margin: 0;
+    }
+
+    .specialties-modalities-padding {
+        position: sticky;
+        top: var(--sticky-navbar-offset);
+        z-index: 1;
+        padding: calc(var(--scale) * 2);
     }
 
     .specialties-modalities-container {
         display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
+        flex-flow: row wrap;
+        justify-content: space-around;
         align-items: center;
+        row-gap: calc(var(--scale) * 2);
+        column-gap: calc(var(--scale) * 1);
         width: 100%;
+        max-width: calc(var(--scale) * 22);
         height: auto;
+        border: calc(var(--scale) * 1) solid hsl(100, 15%, 25%, 100%);
+        border-radius: calc(var(--scale) * 2);
     }
 
     .specialties, .modalities {
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        position: sticky;
-        top: var(--sticky-header-offset);
-        z-index: 1;
         width: fit-content;
         height: auto;
-        padding: 0;
         margin: 0;
+        border-radius: calc(var(--scale) * 2);
         background-color: hsl(100, 15%, 40%, 100%);
     }
 
+    .specialties {
+        padding-top: calc(var(--scale) * 1);
+    }
+
     .modalities {
-        padding-bottom: calc(var(--scale) * 1);
-        font-size: calc(var(--scale) * 1.25);
+        padding-bottom: calc(var(--scale) * 2);
     }
 
     .specialties h2, .modalities h2 {
         width: fit-content;
         height: auto;
-        padding: calc(var(--scale) * 2) calc(var(--scale) * 2) 0;
+        padding: calc(var(--scale) * 1);
         margin: 0;
         font-size: calc(var(--scale) * 2.25);
         color: hsl(0, 0%, 10%, 100%);
@@ -606,7 +659,7 @@ details[open] .nav-links {
         grid-template-columns: 1fr 1fr;
         gap: calc(var(--scale) * 1);
         max-width: calc(var(--scale) * 30);
-        padding: calc(var(--scale) * 1) calc(var(--scale) * 2);
+        padding: 0;
         margin: 0;
         list-style-type: none;
     }
@@ -616,8 +669,8 @@ details[open] .nav-links {
         justify-content: center;
         align-items: center;
         text-align: center;
-        max-width: calc(var(--scale) * 7);
-        min-height: calc(var(--scale) * 7);
+        max-width: calc(var(--scale) * 6);
+        min-height: calc(var(--scale) * 6);
         padding: calc(var(--scale) * 1);
         border-radius: calc(var(--scale) * 1);
         font-family: "Montserrat Alternates", sans-serif;
@@ -628,18 +681,36 @@ details[open] .nav-links {
     }
 
     .specialties li {
+        font-size: calc(var(--scale) * 0.75);
+    }
+
+    .modalities li {
         font-size: calc(var(--scale) * 1);
     }
 
-    .services .learn-more {
+    .learn-more {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        column-gap: calc(var(--scale) * 2);
         position: sticky;
-        top: var(--sticky-header-offset);
-        z-index: 2;
+        top: var(--sticky-navbar-offset);
+        z-index: 1;
         width: 100%;
+        height: auto;
+        padding: 0 calc(var(--scale) * 2) calc(var(--scale) * 2);
+        margin: 0;
+        background-color: hsl(100, 15%, 40%, 100%);
+    }
+
+    .learn-more h3 {
+        width: 100%;
+        height: auto;
         padding: calc(var(--scale) * 2);
         margin: 0;
         text-align: center;
-        font-size: calc(var(--scale) * 1.75);
+        font-size: calc(var(--scale) * 2.25);
         color: hsl(0, 0%, 10%, 100%);
         background-color: hsl(100, 15%, 40%, 100%)
     }
@@ -650,14 +721,8 @@ details[open] .nav-links {
         justify-content: center;
         align-items: center;
         gap: calc(var(--scale) * 2);
-        position: sticky;
-        top: calc(var(--scale) * 11.3);
-        z-index: 2;
         width: 100%;
         height: auto;
-        padding: 0 calc(var(--scale) * 2) calc(var(--scale) * 2);
-        margin: 0;
-        background-color: hsl(100, 15%, 40%, 100%);
     }
 
     .services-link-container, .schedule-link-container {
@@ -687,27 +752,18 @@ details[open] .nav-links {
     .link-container a {
         width: max-content;
         height: auto;
-        padding: calc(var(--scale) * 0.75) calc(var(--scale) * 1.25);
-        border: none;
-        border-radius: calc(var(--scale) * 1.5);
+        padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
         text-align: center;
         text-decoration: none;
-        font-size: clamp(calc(var(--scale) * 1), 2vw, calc(var(--scale) * 1.5));
+        font-size: calc(var(--scale) * 1);
         color: hsl(49, 20%, 68%, 100%);
-        background-color: hsl(100, 15%, 25%, 100%);
-    }
-
-    .link-container a:link {
-        color: hsl(49, 20%, 68%, 100%);
-    }
-
-    .link-container a:visited {
-        color: hsl(49, 20%, 68%, 100%);
+        background-color: hsl(100, 15%, 20%, 100%);
     }
 
     .link-container a:hover {
-        background-color: hsl(100, 15%, 25%, 100%);
-        color: hsl(49, 20%, 68%, 100%);
+        background-color: hsl(100, 15%, 30%, 100%);
+        color: hsl(0, 0%, 10%, 100%);
+        cursor: pointer;
     }
 
     .link-container a:active {
@@ -723,12 +779,12 @@ details[open] .nav-links {
         height: auto;
         padding: calc(var(--scale) * 1);
         margin: 0;
-        font-size: clamp(0.75rem, 4vw, 2.5rem);
+        font-size: clamp(calc(var(--scale) * 0.75), 4vw, calc(var(--scale) * 2.5));
         color: hsl(0, 0%, 10%, 100%);
         background-color: hsl(100, 15%, 40%, 100%);
     }
 
-    .services .bridge {
+    .bridge {
         position: relative;
         z-index: 2;
         width: 100%;
@@ -755,7 +811,7 @@ details[open] .nav-links {
         pointer-events: none;
     }
 
-    .bridge .text-container h4 {
+    .bridge h4 {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -771,7 +827,7 @@ details[open] .nav-links {
         color: hsl(0, 0%, 10%, 100%);
     }
 
-    .bridge .text-container h5 {
+    .bridge h5 {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -787,77 +843,67 @@ details[open] .nav-links {
         color: hsl(0, 0%, 10%, 100%);
     }
 
-    .bridge .text-container a {
+    .bridge a {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         bottom: 5vh;
         z-index: 3;
-        padding: calc(var(--scale) * 0.75) calc(var(--scale) * 1.25);
-        border: none;
-        border-radius: 2rem;
+        padding: calc(var(--scale) * 0.25) calc(var(--scale) * 0.75);
         text-decoration: none;
         font-size: clamp(0.75rem, 2.5vw, 1.25rem);
         background-color: hsl(100, 15%, 20%, 95%);
         color: hsl(49, 20%, 68%, 100%);
     }
 
-    .bridge .text-container a:link {
+    .bridge a:link {
         color: hsl(49, 20%, 68%, 100%);
     }
 
-    .bridge .text-container a:visited {
+    .bridge a:visited {
         color: hsl(49, 20%, 68%, 100%);
     }
 
-    .bridge .text-container a:hover {
+    .bridge a:hover {
         color: hsl(0, 0%, 10%, 100%);
         background-color: hsl(100, 15%, 35%, 95%);
         cursor: pointer;
     }
 
-    .bridge .text-container a:active {
-        transform: translateX(2px) translateY(2px);
+    .bridge a:active {
+        transform: translateX(calc(-50% + 2px)) translateY(2px);
         box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
         cursor: pointer;
     }
 
-    @media only screen and (min-width: 768px) {
-        .specialties-modalities-container {
-            display: grid;
-            grid-template-rows: auto;
-            grid-template-columns: 1fr 1fr;
-            width: fit-content;
-            min-width: calc(var(--scale) * 44);
-            margin-bottom: calc(var(--scale) * 3);
-            border: calc(var(--scale) * 1) solid hsl(100, 15%, 25%, 100%);
-            border-radius: calc(var(--scale) * 2);
+    @media only screen and (min-width: 1024px), (max-height: 750px) {
+        .specialties-modalities-padding {
+            position: static;
+            padding-bottom: calc(var(--scale) * 3);
         }
         
+        .specialties-modalities-container {
+            justify-content: center;
+            column-gap: calc(var(--scale) * 6);
+            min-width: calc(var(--scale) * 40);
+        }
+
         .specialties, .modalities {
-            position: static;
-            border-radius: calc(var(--scale) * 2);
+            padding: calc(var(--scale) * 2) 0;
         }
 
-        .specialties {
-            grid-row: 1 / 2;
-            grid-column: 1 / 2;
+        .specialties h2, .modalities h2 {
+            padding-top: 0;
+            padding-bottom: calc(var(--scale) * 1);
         }
 
-        .modalities {
-            grid-row: 1 / 2;
-            grid-column: 2 / 3;
-            padding-bottom: 0;
-        }
-
-        .services .learn-more {
-            position: static;
-            font-size: calc(var(--scale) * 2.25);
-        }
-
-        .link-container {
+        .learn-more {
             position: static;
             padding-bottom: calc(var(--scale) * 4);
+        }
+
+        .learn-more h3{
+            font-size: calc(var(--scale) * 2.25);
         }
 
         .services .bridge {
@@ -877,55 +923,59 @@ details[open] .nav-links {
     .endorsement {
         display: flex;
         flex-flow: column nowrap;
-        justify-content: center;
         align-items: center;
         width: 100%;
+        max-width: calc(var(--scale) * 49);
         height: auto;
+        padding: calc(var(--scale) * 2);
+
+        --heading-block-height: clamp(calc(var(--scale) * 6.5), 15vw, calc(var(--scale) * 7));
+        --card-top: calc(var(--sticky-navbar-offset) + var(--heading-block-height));
     }
 
-    .endorsement h2 {
+    .endorsement-heading {
         position: sticky;
-        top: var(--sticky-header-offset);
+        top: var(--sticky-navbar-offset);
         z-index: 1;
+        width: 100%;
+        height: var(--heading-block-height);
         padding: calc(var(--scale) * 2);
+    }
+
+    .endorsement-heading h2 {
+        width: 100%;
+        height: 100%;
         margin: 0;
+        text-align: center;
         font-size: calc(var(--scale) * 2.25);
         color: hsl(0, 0%, 10%, 100%)
     }
 
-    .endorsement-container {
+    .endorsement-text {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-flow: column nowrap;
         position: sticky;
-        top: var(--sticky-header-offset-2);
+        top: var(--card-top);
         z-index: 2;
         width: 100%;
         height: auto;
-        padding: 0 calc(var(--scale) * 2) calc(var(--scale) * 2);
-    }
-
-    .endorsement-text {
-        min-width: 16rem;
-        max-width: 50rem;
-        max-height: 25rem;
-        padding: 1rem 2rem;
-        margin: 0;
+        padding: calc(var(--scale) * 0.5);
+        margin-bottom: calc(var(--scale) * 2);
         border: none;
-        border-radius: 2rem;
+        border-radius: calc(var(--scale) * 2);
         background-color: hsl(100, 15%, 25%, 100%);
     }
 
-    .endorsement-text h4 {
-        padding: 1rem 0;
+    .endorsement-text h3 {
+        padding: calc(var(--scale) * 1);
         margin: 0;
-        color: hsl(49, 20%, 68%, 100%);
         font-size: calc(var(--scale) * 1.25);
         font-weight: 400;
+        color: hsl(49, 20%, 68%, 100%);
     }
 
     .endorsement-text p {
-        padding: 1rem 0;
+        padding: calc(var(--scale) * 1);
         margin: 0;
         line-height: 1.5rem;
         font-size: calc(var(--scale) * 0.75);
@@ -1080,7 +1130,8 @@ details[open] .nav-links {
         padding: 0;
     }
 
-    .consultation .book-now, .consultation .contact {
+    .consultation-links .book-now, 
+    .consultation-links .contact {
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -1092,32 +1143,26 @@ details[open] .nav-links {
         justify-content: flex-start;
     }
 
-    .consultation a {
-        padding: calc(var(--scale) * 0.75) clamp(var(--scale) * 1, 3vw, var(--scale) * 1.25);
+    .consultation-links a {
+        padding: calc(var(--scale) * 0.5) calc(var(--scale) * 1);
         border: none;
-        border-radius: 2rem;
+        border-radius: calc(var(--scale) * 2);
         text-decoration: none;
         font-size: calc(var(--scale) * 0.75);
-        background-color: hsl(100, 15%, 25%, 100%);
+        background-color: hsl(100, 15%, 20%, 100%);
         color: hsl(49, 20%, 68%, 100%);
     }
 
-    .consultation a:link {
-        color: hsl(49, 20%, 68%, 100%);
-    }
-
-    .consultation a:visited {
-        color: hsl(49, 20%, 68%, 100%);
-    }
-
-    .consultation a:hover {
+    .consultation-links a:hover {
+        background-color: hsl(100, 15%, 30%, 100%);
+        color: hsl(100, 0%, 10%, 100%);
         cursor: pointer;
-        background-color: hsl(100, 15%, 25%, 50%);
     }
 
-    .consultation a:active {
+    .consultation-links a:active {
+        transform: translateX(2px) translateY(2px);
+        box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
         cursor: pointer;
-        background-color: hsl(100, 15%, 25%, 75%);
     }
     /*--END OF HOME PAGE--*/
 
@@ -1261,7 +1306,7 @@ footer {
     height: auto;
 }
 
-footer p, address {
+footer p, footer address {
     text-align: center;
     padding: 0.125rem 2rem;
     margin: 0;
